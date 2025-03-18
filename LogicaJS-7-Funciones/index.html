@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .container { margin-top: 50px; }
+        input, button { margin: 5px; padding: 10px; font-size: 16px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Calculadora</h2>
+        <input type="number" id="num1" placeholder="Número 1">
+        <input type="number" id="num2" placeholder="Número 2">
+        <br>
+        <button onclick="calcular('suma')">Suma</button>
+        <button onclick="calcular('resta')">Resta</button>
+        <button onclick="calcular('multiplicacion')">Multiplicación</button>
+        <button onclick="calcular('division')">División</button>
+        <h3 id="resultado">Resultado: </h3>
+    </div>
+
+    <script>
+        function suma(a, b) { return a + b; }
+        function resta(a, b) { return a - b; }
+        function multiplicacion(a, b) { return a * b; }
+        function division(a, b) { return b !== 0 ? a / b : "Error: División por cero"; }
+
+        function calcular(operacion) {
+            let num1 = parseFloat(document.getElementById('num1').value);
+            let num2 = parseFloat(document.getElementById('num2').value);
+            if (isNaN(num1) || isNaN(num2)) {
+                document.getElementById('resultado').innerText = "Error: Ingresa números válidos";
+                return;
+            }
+            const operaciones = { suma, resta, multiplicacion, division };
+            let resultado = operaciones[operacion](num1, num2);
+            document.getElementById('resultado').innerText = `Resultado: ${resultado}`;
+        }
+    </script>
+</body>
+</html>

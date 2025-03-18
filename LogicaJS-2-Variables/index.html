@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta de Programación</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Responde las siguientes preguntas:</h2>
+
+        <label for="nombre">¿Cuál es tu nombre?</label>
+        <input type="text" id="nombre" placeholder="Escribe tu nombre...">
+
+        <label for="edad">¿Cuántos años tienes?</label>
+        <input type="number" id="edad" placeholder="Ingresa tu edad...">
+
+        <label for="lenguaje">¿Qué lenguaje de programación estás estudiando?</label>
+        <input type="text" id="lenguaje" placeholder="Ej: JavaScript, Python...">
+
+        <button onclick="mostrarMensaje()">Enviar</button>
+
+        <h3 id="mensaje"></h3>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
